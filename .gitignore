@@ -1,0 +1,23 @@
+# Ignore everything by default
+*
+
+# --- EXCEPTIONS ---
+# Keep the .gitignore file itself
+!.gitignore
+
+# Keep the 'notebooks' directory and all its contents (files and sub-directories)
+!notebooks/
+!notebooks/**
+
+# --- EXPLICITLY IGNORE ---
+# Virtual environment
+/.venv/
+
+# Models directory (if not part of notebooks you want to keep)
+/models/
+
+# Top-level outputs directory (notebooks/outputs/ will be kept by the rule above)
+/outputs/
+
+# Weights and Biases logging directory
+/wandb/
