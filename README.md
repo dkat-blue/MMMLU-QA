@@ -68,7 +68,7 @@ The primary dataset is [openai/MMMLU](https://huggingface.co/datasets/openai/mmm
 3.  **Environment Variables**:
     * **Hugging Face Token**: For Gemma models, ensure you have accepted the license on Hugging Face and are authenticated. Set your `HF_TOKEN` environment variable or log in via `huggingface-cli login`.
     * **LM Studio Endpoint (for `gemma_3_27b_baseline.ipynb`)**:
-        * Set the `LMSTUDIO_ENDPOINT` environment variable to your LM Studio server address (e.g., `http://localhost:1234/v1/`). The notebook defaults to `http://localhost:1234/v1/` if this variable is not set.
+        * Set the `LMSTUDIO_ENDPOINT` environment variable to your LM Studio server address (e.g., `http://localhost:1234/v1/`).
         * The `API_KEY` for LM Studio can also be set via the `LMSTUDIO_API_KEY` environment variable (defaults to "lm-studio" in the notebook).
 4.  **Weights & Biases**:
     * The project is configured to log to W&B. Ensure you are logged in (`wandb login`).
