@@ -56,19 +56,21 @@ The primary dataset is [openai/MMMLU](https://huggingface.co/datasets/openai/mmm
 1.  **Environment**: It's recommended to set up a Python virtual environment.
     ```bash
     python -m venv .venv
-    source .venv/bin/activate
+    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
     ```
 2.  **Dependencies**: Install the required packages:
     ```bash
     pip install -r requirements.txt
     ```
     (Key libraries include `datasets`, `transformers`, `accelerate`, `bitsandbytes`, `peft`, `wandb`, `openai`, `scikit-learn`, `pandas`)
-3.  **Hugging Face Token**: For Gemma models, ensure you have accepted the license on Hugging Face and are authenticated. Set your `HF_TOKEN` environment variable or log in via `huggingface-cli login`.
-4.  **LM Studio (for Gemma-3-27B)**:
-    * Ensure LM Studio is running and the `gemma-3-27b-it` model is served.
-    * Update the `ENDPOINT` in `notebooks/gemma_3_27b_baseline.ipynb` if your LM Studio server is not at the default `http://10.5.0.2:1234/v1/`.
-    * An API key (can be a placeholder like "lm-studio") is used.
-5.  **Weights & Biases**:
+    *(Optional: If you plan to use `.env` files for managing environment variables, add `python-dotenv` to `requirements.txt` and install it.)*
+
+3.  **Environment Variables**:
+    * **Hugging Face Token**: For Gemma models, ensure you have accepted the license on Hugging Face and are authenticated. Set your `HF_TOKEN` environment variable or log in via `huggingface-cli login`.
+    * **LM Studio Endpoint (for `gemma_3_27b_baseline.ipynb`)**:
+        * Set the `LMSTUDIO_ENDPOINT` environment variable to your LM Studio server address (e.g., `http://localhost:1234/v1/`). The notebook defaults to `http://localhost:1234/v1/` if this variable is not set.
+        * The `API_KEY` for LM Studio can also be set via the `LMSTUDIO_API_KEY` environment variable (defaults to "lm-studio" in the notebook).
+4.  **Weights & Biases**:
     * The project is configured to log to W&B. Ensure you are logged in (`wandb login`).
     * W&B artifacts are stored in the `./wandb` directory by default.
 
