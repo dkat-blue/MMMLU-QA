@@ -4,6 +4,7 @@
 # --- EXCEPTIONS ---
 # Keep the .gitignore file itself
 !.gitignore
+!requirements.txt
 
 # Keep the 'notebooks' directory and all its contents (files and sub-directories)
 !notebooks/
